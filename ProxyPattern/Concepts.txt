@@ -1,0 +1,10 @@
+若突然想在原有的類別 RealObject 的某函式新增額外的任務
+不直接修改RealObject
+額外建立新的代理人(Proxy)去執行任務，
+Proxy 與 RealObject 皆實作相同的介面且讓 Proxy 包含 RealObject，
+則可以在外保持同樣的函式呼叫
+
+IBase* b = new RealObject;
+b->DoSomething()
+
+只需修改成 new ProxyObject 便可達成新的任務
