@@ -10,7 +10,3 @@ IBase::~IBase()
     qDebug() << "IBase delete";
 }
 
-void IBase::DoSomething()
-{
-
-}

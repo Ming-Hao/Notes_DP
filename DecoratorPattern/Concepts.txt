@@ -1,0 +1,12 @@
+已存在介面 Base，繼承Base的類別RealObject1, RealObject2,... 
+這些不盡相同的類別有類似的裝飾行為 Decorator1, Decorator2,...
+裝飾動作允許可以疊加
+
+將可疊加的動作類型視為一類，用new實體的方式逐漸添加動作，
+Base* b = new Decorator3(new Decorator2(new Decorator1(new RealObject1)))
+b->Operation
+避免產生一堆類別，造成管理修改上的麻煩
+
+註：Java的IO Stream Class 有採用裝飾者模式概念
+
+串聯一堆 new 的方式可以用工廠模式進行修飾
