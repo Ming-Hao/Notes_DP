@@ -8,8 +8,8 @@ Decorator::~Decorator()
         delete component;
     component = nullptr;
 }
-
-Decorator::Decorator(IComponent *component)
+//不寫後面 : IComponent() 也會自動跑無參數的建構子
+Decorator::Decorator(IComponent *component) : IComponent()
 {
     this->component = component;
     this->description = "Decorated " + this->component->getDescription();
