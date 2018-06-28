@@ -1,0 +1,7 @@
+將If-else, 或switch的結構式寫法，轉化設計成鏈型結構，
+把待處理的任務(request)與處理者(handler)分開，
+每一層handler如何處理該任務可以獨立寫，
+運用linked-list的概念，無法處理就傳遞給下一個節點，
+若再無next handler則結束
+
+

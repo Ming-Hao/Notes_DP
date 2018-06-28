@@ -1,0 +1,5 @@
+關於IRequest, IHandler
+基本處理的函式寫在介面中，但為避免外部new IRequest/IHandler，
+介面用protected使得外層只能 new 繼承出之類別，
+但外層指標變數是宣告成介面，所以delete要public。
+介面所有函式均為virtual形式，如果不想要基本的就直接覆寫。
