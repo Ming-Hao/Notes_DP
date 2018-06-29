@@ -1,0 +1,25 @@
+註：已經寫好的 class 盡可能不要再去更動
+
+基本概念
+可被 new 的實作類別，將其實作的方式抽象成介面，
+" 實作的方式 "在執行之前，才指定給 "實作的類別"
+
+Code大綱
+一般物件會 RealObject 繼承自某個抽象 BaseObject，
+ 
+Base* Obj = new Real();
+obj->func();
+
+在實作 BaseObject 的 func 功能時，若其實是仰賴某種API，
+則 API 改變時，就必須將 RealObject 本來寫好的 func 進行修改，
+將 "功能實作" 獨立成一個抽象介面 AbstractImplement，
+額外寫 RealImplement 實作 AbstractImplement，
+
+修改 RealObject 的 func()成
+RealObject::func() {
+	AbstractImplement->RawFunc();
+}
+
+再類似 RealObject.setImplement(ReaImplement) 的方式，
+把 ReaImplement 指定到 RealObject，
+則替換不同的 AbstractImplement，就可以變換 func() 的表現方式。
