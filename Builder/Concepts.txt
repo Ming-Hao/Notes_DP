@@ -1,0 +1,14 @@
+Factory 通常用於建立完整物件，
+Builder 則用在可用一定順序建立的複雜物體，
+物體由小部份零件構成，而零件又有自己的建立方式時，
+Builder 介面只提供最廣義的建立順序及 getter，繼承 Builder 時在覆寫函式。
+
+讓 Director 擁有 Builder 指標，再將實作的方式指定給 Director，
+Director 只須操作 
+
+Builder->Method1();
+Builder->Method2();
+Builder->getResult();
+
+
+就可以建立所要實作的Object。替換不同的實作物體就可以建立不同的Object
