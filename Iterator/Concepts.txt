@@ -1,0 +1,7 @@
+當物件本身含有vector, List, 或 ArrayList 等容器時，稱為 Aggregate 或是 Collection
+
+若外部想遍歷 Aggregate 內部的容器結構時，
+有時就要提供 setter 或 getter 把容器外傳出去再做遍歷，
+寫一個迭代的介面 Iterator，可隱藏內部容器資訊，
+遍歷方式也可以委由不同實作方式的 Iterator 達到變化，
+且因 polymorphism 保持一致的外部函式呼叫
