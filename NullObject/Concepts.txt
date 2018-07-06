@@ -1,0 +1,9 @@
+如果指標有可能是空指標，把檢查 null 這件事，包裝成NullObject，
+NullObject 也是一個實體，只是函式 body 為空或回傳固定值，
+因生成出來的object，依舊可以操作 public function，
+就不用到處都有 if-else 的判斷，簡化介面
+
+NullObject 因行為相同，可以使用 Singleton Pattern，
+指向唯一一份實體，減少記憶體使用量
+
+

@@ -1,0 +1,4 @@
+delete 時最底層介面 Element 一樣是 virtual ~Element() {}
+該 delete 的是物件內的容器 vector<Element*>
+能夠操作 AddItem 的實體就要實作解構，解構vector<Element*> 內的元素 
+遍歷子樹只要是 iteratorable 的容器就可以

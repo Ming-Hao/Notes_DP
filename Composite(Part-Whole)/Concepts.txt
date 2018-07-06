@@ -1,0 +1,9 @@
+Part-Whole 的意思是
+"單一個" 物件和部分 "一組" 的物件有相似的動作，
+透過將結構設計成 Tree (樹狀結構)，介面 BaseObject
+BaseObject {
+	process()
+	AddItem()
+}
+
+運用 Tree 的概念，即可遍歷每一個單一物件
