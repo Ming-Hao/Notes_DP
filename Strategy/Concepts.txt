@@ -1,0 +1,16 @@
+類別內部分為 "data member (資料)" 和 "method (行為)"，
+method 如果有好幾種演算法可實現，
+比起寫進類別內，若把行為獨立出來，未來維護及擴充比較容易，
+用 Setter 把行為注入，就可以替換不同的演算法
+
+RealObject {
+	IStrategy* method; 
+	void DoSomething(){
+		method->Work(); 
+	}
+}
+
+如果可實體化的類別的函式是 "委由" 其他類別去做，
+這樣再去更改這個類別的機會就降低了，
+因 Setter 可注入不同行為，又保有可變的彈性 
+
