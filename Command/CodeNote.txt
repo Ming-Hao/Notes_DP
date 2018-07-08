@@ -1,0 +1,5 @@
+儲存 do undo 的容器不一定要是 queue, stack，
+只是常見情況是有順序性的，
+若 Command 又有責任問題，可搭配 chain of responsibility
+若 Command 又需要檢查 nullptr，可再用 null object 改善介面
+

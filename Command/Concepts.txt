@@ -1,0 +1,25 @@
+希望把動作從時間解耦，辦法是把 function 單獨做成介面，
+負責 new 類別的時間，和執行的時間便可以控制，
+
+Do, undo, redo 彼此就是時間不同產生的行為
+
+
+把某類別的 functions 再包裝成一項一項的 Command 類別
+
+ClassR {
+	void functionA(); <-- CommandA
+	void functionB(); <-- CommandB
+	void functionC(); <-- CommandC
+}
+Command{
+	void execute() { ClassR::funcion ;} <-- want to do (*)
+}
+
+執行 Command 時才呼叫該類別去執行，Command 本身只是 ClassR 的中介產物
+在這個設計下，收集 Command 的類別和 ClassR 可以完全沒有關係，
+只需負責收集 Command 這動作
+Command 收集者被稱作 Invoker，接受者稱為 Receiver (ClassR 就是 Receiver)，
+(*)的實現方式只要將 Receiver 作為參數傳進去即可，
+替換不同 Receiver 就可以替換 function 的行為
+
+在一些情形下，Command又稱為Event
