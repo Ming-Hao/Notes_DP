@@ -1,0 +1,6 @@
+Observer 要做的是觀察到後的行為 update()，
+Subject 要知道有哪些 Observer 正在觀察，
+由 Subject 執行 notify，通知所有 Observer 要執行 update，
+
+在一些情況下，某類別一更動就要連動許多類別改值，
+連動的所有類別視為 Observer，便可套用 Observer pattern
