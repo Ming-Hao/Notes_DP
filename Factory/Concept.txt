@@ -1,0 +1,50 @@
+簡單工廠方法 (Simple Factory pattern / Static Factory pattern)：
+當一段函式需要先產生物件再繼續動作時，
+產生哪種物件需要 if-else 或 switch 判斷時，
+將實體化 new 物件 的動作從原類別分離，
+有 if-else 流程控制的地方，需要改動的可能比較大，
+獨立出來以後也比較好維護
+
+Baseobject* obj = null;
+if(...)
+	obj = new RealObject1();
+else if(...)
+	obj = new RealObject2();
+else if(...)
+	obj = new RealObject3();
+	
+obj......
+
+工廠方法 (Factory pattern)：
+將簡單工廠這個函式 Create() 包在一個類別 BaseClass (Abstract Class)中，
+由繼承 BaseClass 的類別去實作 Create()，
+需要新增改動 new 的類別就另外繼承 BaseClass，而不是修改已經寫好的類別
+由於是抽象類別，也可以預先寫好一些通用函式，通用函式可用 Template pattern 去處理
+
+抽象工廠方法 (Abstract Factory pattern)：
+工廠方法 Create 出來的東西為一完整物件，
+如果該物件是由很多小物件組成，而每個小物件又可套用工廠方式產生，
+將產生各原料的動作 CreateIngredient1(), CreateIngredient2(),...寫成 Interface，
+實作 CreateIngredient 的動作回傳可實體的 Ingredient，再將所有 Ingredient 組合成 Object
+
+//object is abstract type
+Object contains
+{
+	// all ingredient are abstract type
+	Ingredient1,
+	Ingredient2, 
+	...
+}
+
+Ingredient CreateIngredient() 
+{
+	return new CustomIngredient();
+}
+
+
+Object Create()
+{
+	Ingredient1 =  CreateIngredient1();
+	Ingredient2 =  CreateIngredient2();
+	return CustomObject(Ingredient1, Ingredient2,...)
+}
