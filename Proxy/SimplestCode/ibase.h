@@ -6,7 +6,7 @@ class IBase
 public:
     IBase();
     virtual ~IBase();
-    virtual void DoSomething();
+    virtual void DoSomething() = 0;
 
 };
 
