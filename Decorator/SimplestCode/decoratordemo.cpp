@@ -27,5 +27,5 @@ DecoratorDemo::ShowDemo()
     delete comp5;
     delete comp6;
     
-    //註：因 virtual destructo 機制，刪除物件時，刪掉最後一個 new 的物件即可
+    //註：因 virtual destructor 機制，刪除物件時，刪掉最後一個 new 的物件即可
 }
